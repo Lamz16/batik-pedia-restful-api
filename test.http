@@ -1,0 +1,70 @@
+### Create Province
+
+POST http://localhost:8080/api/provinsi
+Content-Type: application/json
+Accept: application/json
+
+{
+  "namaProvinsi" : "Jawa Barat",
+  "imgProvinsi" : "Jawa Barat.jpeg",
+  "detailProvinsi" : "Jawa Barat adalah provinsi yang terletak di bagian"
+}
+
+### Create Province Invalid
+
+POST http://localhost:8080/api/provinsi
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "",
+  "namaProvinsi" : "Jawa Timur",
+  "imgProvinsi" : "Jawa-timur.jpeg",
+  "detailProvinsi" : "Jawa Timur adalah provinsi yang terletak di bagian"
+}
+
+
+### Get Province
+
+GET http://localhost:8080/api/provinsi/PROV20251123-001
+Accept: application/json
+
+### Get Province not found
+
+GET http://localhost:8080/api/provinsi/PROV20251123-002
+Accept: application/json
+
+
+### Update Province
+
+PUT http://localhost:8080/api/provinsi/PROV20251123-003
+Content-Type: application/json
+Accept: application/json
+
+{
+  "namaProvinsi": "Jawa Barat",
+  "imgProvinsi": "Jawa Barat.jpeg",
+  "detailProvinsi": "Jawa Barat adalah provinsi yang terletak di bagian barat pulau jawa"
+}
+
+
+### Update Province Invalid
+PUT http://localhost:8080/api/provinsi/PROV20251123-002
+Content-Type: application/json
+Accept: application/json
+
+{
+  "namaProvinsi" : "",
+  "imgProvinsi" : "Jawa Barat.jpeg",
+  "detailProvinsi" : "Jawa Barat adalah provinsi yang terletak di bagian barat pulau jawa"
+}
+
+
+### Delete Province
+DELETE http://localhost:8080/api/provinsi/PROV20251123-002
+
+### Delete Province Not Found
+DELETE http://localhost:8080/api/provinsi/INVALID-ID
+
+### Get Province List
+GET http://localhost:8080/api/provinsi
